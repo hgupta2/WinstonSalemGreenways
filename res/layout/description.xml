@@ -2,18 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
-
-    <Button
-        android:id="@+id/get_direction"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="60dp"
-        android:gravity="center"
-        android:text="Get Directions" />
+    android:orientation="vertical" >
 
     <TextView
         android:id="@+id/nameGreenWay"
@@ -21,20 +10,25 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/nameAccessPoint"
+    <ScrollView
+        android:id="@+id/SCROLLER_ID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/nameGreenWay"
-        android:layout_below="@+id/nameGreenWay"
-        android:layout_marginTop="27dp"
-        
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-    
-   
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        android:layout_below="@+id/nameGreenWay" >
+
+        <TextView
+            android:id="@+id/nameAccessPoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="5dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:singleLine="false" />
+    </ScrollView>
+
 </RelativeLayout>

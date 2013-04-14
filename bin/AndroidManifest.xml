@@ -40,6 +40,7 @@
         <activity android:name=".GreenwayMapView" />
         <activity android:name=".GreenwayList" />
         <activity android:name=".NetworkError" />
+        <activity android:name=".Weather" />
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyC8G8kGJ1Z9BcwN4A6abyjIoV6_jdH8kUI" />

@@ -9,23 +9,10 @@ public class GreenwayLocation{
 	private String accesspt;
 	private String[] location;
 	public static HashMap<String, GreenwayLocation> greenways;
+	private String description;
 	
 	public GreenwayLocation() { greenways = new HashMap<String, GreenwayLocation>(); }
-	/*
-	private Greenway(Parcel in) {
-		int size = in.readInt();
-		  for(int i = 0; i < size; i++){
-		    String key = in.readString();
-		    Greenway value = (Greenway)in.readValue(Greenway.class.getClassLoader());
-		    greenways.put(key, value);
-		  }
-	}
-	*/
-	/*private void readFromParcel(Parcel in) {
-		// TODO Auto-generated method stub
-		greenways = in.readHashMap(greenways, Greenway.class.getClassLoader());
-	}*/
-
+	
 	public void setTitle(String t){
 		title = t;
 	}
@@ -49,30 +36,13 @@ public class GreenwayLocation{
 	public String getAccesspt(){
 		return accesspt;
 	}
-	/*
-	public int describeContents() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public void writeToParcel(Parcel dest, int flags) {
-		// TODO Auto-generated method stub
-		dest.writeInt(greenways.size());
-		  for(String key : greenways.keySet()){
-		    dest.writeString(key);
-		    dest.writeValue(greenways.get(key));
-		  }
+	
+	public void setDescription(String desc){
+		description = desc;
 	}
 	
-	 public static final Parcelable.Creator<Greenway> CREATOR =
-		    	new Parcelable.Creator<Greenway>() {
-		            public Greenway createFromParcel(Parcel in) {
-		                return new Greenway(in);
-		            }
-		 
-		            public Greenway[] newArray(int size) {
-		                return new Greenway[size];
-		            }
-		        };*/
+	public String getDescription(){
+		return description;
+	}
 }
 

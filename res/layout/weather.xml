@@ -2,24 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-     >
+    android:orientation="vertical" 
+    >
 
     <fragment
-        android:id="@+id/DescFragment"
-        android:name="com.example.greenways.DescFragment"
-        android:layout_weight="2"
+        android:id="@+id/WeatherFragment"
+        android:name="com.example.greenways.WeatherFragment"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <fragment
-        android:id="@+id/ButtonFragment"
-        android:name="com.example.greenways.ButtonFragment"
-        android:layout_weight="9"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-    
     <fragment
         android:id="@+id/Header"
         android:name="com.example.greenways.Header"

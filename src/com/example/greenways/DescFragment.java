@@ -3,6 +3,7 @@ package com.example.greenways;
 import java.util.HashMap;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,8 +16,7 @@ import android.widget.TextView;
 public class DescFragment extends Fragment{
 
 	HashMap<String, GreenwayLocation> greenwayHashMap;
-	String provider;
-
+	
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		
@@ -27,26 +27,14 @@ public class DescFragment extends Fragment{
 		String str = getActivity().getIntent().getStringExtra("str");
 
 		TextView nameGreenWay = (TextView) view.findViewById(R.id.nameGreenWay);
-		nameGreenWay.setText(greenwayHashMap.get(str).getTitle()+ " at " + greenwayHashMap.get(str).getAccesspt());
-
-		TextView nameAccessPoint = (TextView) view.findViewById(R.id.accessPointName);
-		System.out.println(nameAccessPoint);
-		//nameAccessPoint.setText();
-
-		String[] l = greenwayHashMap.get(str).getLocation();
-		final double lattitudeValue = Double.parseDouble(l[1]); //converting string latitude value to double
-		final double longitudeValue=Double.parseDouble(l[0]); //converting string longitude value to double
-
-		Button buttonOne = (Button) view.findViewById(R.id.get_direction);
-		buttonOne.setOnClickListener(new Button.OnClickListener() {
-			public void onClick(View v) {
-				Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
-						Uri.parse("http://maps.google.com/maps?daddr="+lattitudeValue+","+longitudeValue+
-								"&saddr="+GreenwayListFragment.curLocation.getLatitude()+","+GreenwayListFragment.curLocation.getLongitude()));
-				intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
-				startActivity(intent);
-			}
-		});
+		nameGreenWay.setText(greenwayHashMap.get(str).getTitle()); 
+		nameGreenWay.setTextColor(Color.argb(90, 00, 150, 00));
+		
+		TextView nameAccessPoint = (TextView) view.findViewById(R.id.nameAccessPoint);
+		nameAccessPoint.setText("\n" + "Access Point at " +greenwayHashMap.get(str).getAccesspt()
+				+ "\n" + "\n" +greenwayHashMap.get(str).getDescription());
+		nameAccessPoint.setTextColor(Color.argb(90, 255, 00, 00));
+		
 		return view; 
 	}
 
