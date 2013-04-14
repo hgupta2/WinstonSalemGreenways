@@ -6,12 +6,14 @@ import java.util.Iterator;
 import java.util.concurrent.ExecutionException;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMyLocationChangeListener;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -22,9 +24,8 @@ import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MyLocationOverlay;
-//import android.support.v4.app.FragmentActivity;
 
-public class GreenwayMap extends android.support.v4.app.FragmentActivity implements OnInfoWindowClickListener{
+public class GreenwayMap extends android.support.v4.app.FragmentActivity implements OnInfoWindowClickListener, OnMyLocationChangeListener{
 	private GoogleMap mMap;
 	private UiSettings mapUI;
 	MapController mc;
@@ -44,8 +45,9 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.greenway_map);
+
 		setUpMapIfNeeded();	
-		
+
 	}
 
 	//Setting up the map at the startup
@@ -64,12 +66,21 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 
 	//All the things displayed within map
 	private void setUpMap() {
+
+		//listener for access points marker
+		mMap.setOnInfoWindowClickListener(this);
+
+		//listener for access points marker
+		mMap.setOnMyLocationChangeListener(this);
+
 		mapUI = mMap.getUiSettings();
 		mapUI.setZoomControlsEnabled(true);
+		mMap.setMyLocationEnabled(true);
 
 		LatLng latLng = new LatLng(GreenwayListFragment.curLocation.getLatitude(), GreenwayListFragment.curLocation.getLongitude());
-		mMap.addMarker(new MarkerOptions().position(latLng));
-		CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 10);
+		//mMap.addMarker(new MarkerOptions().position(latLng)
+		//		.icon(BitmapDescriptorFactory.fromResource(R.drawable.mylocation)));
+		CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng,15);
 		mMap.animateCamera(cameraUpdate);
 
 		//Parse accesspt kml and show the coordinates as Markers in the map
@@ -101,10 +112,10 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 		Iterator<String[]> itr = line.iterator();
 		String[] l = new String[3];
 		String[] l2 = new String[3];
-		
+
 		int count = 0;
 		int itrcount = 0;
-		
+
 		//Iterating through all the coordinates in the kml and drawing a polyline for each greenway 
 		while(itr.hasNext()){	
 			itrcount++;
@@ -118,7 +129,7 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 					l = ls[i].split(",");
 					lattitudeValue = Double.parseDouble(l[1]); //converting string latitude value to double
 					longitudeValue=Double.parseDouble(l[0]); //converting string longitude value to double
-					
+
 					if(i+6 > ls.length-2){
 						l2 = ls[ls.length-2].split(",");
 					}
@@ -127,7 +138,7 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 					}
 					lattitudeValue2 = Double.parseDouble(l2[1]); //converting string latitude value to double
 					longitudeValue2 =Double.parseDouble(l2[0]); //converting string longitude value to double
-					
+
 					rectOptions = new PolylineOptions().add(new LatLng(lattitudeValue, longitudeValue)).
 							add(new LatLng(lattitudeValue2,longitudeValue2)).color(ROUTECOLOR).width(ROUTEWIDTH);
 					mMap.addPolyline(rectOptions);
@@ -138,7 +149,7 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 					l = ls[i].split(",");
 					lattitudeValue = Double.parseDouble(l[1]); //converting string lattitude value to double
 					longitudeValue=Double.parseDouble(l[0]); //converting string longitude value to double
-					
+
 					if(i+3 > ls.length-2){
 						l2 = ls[ls.length-2].split(",");
 					}
@@ -147,7 +158,7 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 					}
 					lattitudeValue2 = Double.parseDouble(l2[1]); //converting string lattitude value to double
 					longitudeValue2 =Double.parseDouble(l2[0]); //converting string longitude value to double
-					
+
 					rectOptions = new PolylineOptions().add(new LatLng(lattitudeValue, longitudeValue)).
 							add(new LatLng(lattitudeValue2,longitudeValue2)).color(ROUTECOLOR).width(ROUTEWIDTH);
 					mMap.addPolyline(rectOptions);				
@@ -179,7 +190,7 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 
 			lattitudeValue = Double.parseDouble(l[1]); //converting string lattitude value to double
 			longitudeValue=Double.parseDouble(l[0]); //converting string longitude value to double
-			
+
 			mMap.addMarker(new MarkerOptions()
 			.position(new LatLng(lattitudeValue, longitudeValue)).
 			icon(BitmapDescriptorFactory.fromResource(R.drawable.parkingmarker)));
@@ -203,9 +214,6 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 			}
 		}
 
-		//listener for access points marker
-		mMap.setOnInfoWindowClickListener(this);
-
 		//Iterating through all the access points in the kml and displaying as a marker
 		for(String key : GreenwayLocation.greenways.keySet()) {
 
@@ -215,10 +223,10 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 
 			lattitudeValue = Double.parseDouble(l[1]); //converting string lattitude value to double
 			longitudeValue=Double.parseDouble(l[0]); //converting string longitude value to double
-			
+
 			markers.add(mMap.addMarker(new MarkerOptions()
 			.position(new LatLng(lattitudeValue, longitudeValue)).
-			icon(BitmapDescriptorFactory.fromResource(R.drawable.locationmarker)).
+			icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)).
 			title(title).snippet(accesspt)));
 
 		}
@@ -238,6 +246,12 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 
 			}
 		}
+
+	}
+
+	public void onMyLocationChange(Location location) {
+
+		GreenwayListFragment.curLocation = location;
 
 	}
 

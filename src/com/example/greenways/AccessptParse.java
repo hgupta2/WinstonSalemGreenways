@@ -44,34 +44,24 @@ public class AccessptParse extends AsyncTask<String, Void, HashMap<String, Green
 					Element entry = (Element)nl.item(i);
 					Element accesspt = (Element)entry.getElementsByTagName("name").item(0);
 					Element title = (Element)entry.getElementsByTagName("Greenway").item(0);
-					//String details = null;
-					/*
-					Element m = (Element)entry.getElementsByTagName("MultiGeometry").item(0);
-					
-					if(m!=null){
-					Element ls = (Element)m.getElementsByTagName("LineString").item(0);
-					//System.out.println("multigeo");
-					if(ls!=null){
-					Element g = (Element)ls.getElementsByTagName("coordinates").item(0);
-					//System.out.println("linestr");
-					if(g!=null){
-					//System.out.println("coord");	
-					*/
 					Element g = (Element)entry.getElementsByTagName("coordinates").item(0);
+					Element d = (Element)entry.getElementsByTagName("description").item(0);
+					
 					String greenwayname = title.getFirstChild().getNodeValue();
 					String name =  accesspt.getFirstChild().getNodeValue();
 					String point = g.getFirstChild().getNodeValue();
+					String desc = d.getFirstChild().getNodeValue();
 					
 					location = point.split(",");
-					
-					
 					name = name.trim();
 					greenwayname = greenwayname.trim();
+					
 					if(greenways.get(name)==null){
 						GreenwayLocation g1 = new GreenwayLocation();
 						g1.setLocation(location);
 						g1.setAccessPt(name);
 						g1.setTitle(greenwayname);
+						g1.setDescription(desc);
 						greenways.put(name, g1);
 					}
 				}

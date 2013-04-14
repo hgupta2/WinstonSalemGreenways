@@ -9,11 +9,23 @@
     <fragment
         android:id="@+id/DescFragment"
         android:name="com.example.greenways.DescFragment"
+<<<<<<< HEAD
+=======
+        android:layout_weight="2"
+>>>>>>> hemant/master
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
         tools:layout="@layout/description" />
 
+    
+    <fragment
+        android:id="@+id/ButtonFragment"
+        android:name="com.example.greenways.ButtonFragment"
+        android:layout_weight="9"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
     
     <fragment
         android:id="@+id/Header"

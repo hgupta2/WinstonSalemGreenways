@@ -2,7 +2,6 @@ package com.example.greenways;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.view.Menu;
 
 public class Greenway_Description extends FragmentActivity{
 	@Override

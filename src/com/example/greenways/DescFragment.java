@@ -5,6 +5,7 @@ import java.util.HashMap;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,8 +18,7 @@ import android.widget.TextView;
 public class DescFragment extends Fragment{
 
 	HashMap<String, GreenwayLocation> greenwayHashMap;
-	String provider;
-
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -61,6 +61,14 @@ public class DescFragment extends Fragment{
 		});
 		
 
+		nameGreenWay.setText(greenwayHashMap.get(str).getTitle()); 
+		nameGreenWay.setTextColor(Color.argb(90, 00, 150, 00));
+		
+		TextView nameAccessPoint = (TextView) view.findViewById(R.id.nameAccessPoint);
+		nameAccessPoint.setText("\n" + "Access Point at " +greenwayHashMap.get(str).getAccesspt()
+				+ "\n" + "\n" +greenwayHashMap.get(str).getDescription());
+		nameAccessPoint.setTextColor(Color.argb(90, 255, 00, 00));
+		
 		return view; 
 	}
 

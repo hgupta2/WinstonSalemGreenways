@@ -25,6 +25,27 @@ public class GreenwayListFragment extends ListFragment {
 	LocationManager locationManager;
 	public static Location curLocation;
 	
+	LocationListener loclis = new LocationListener() {
+
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+			// TODO Auto-generated method stub
+
+		}
+
+		public void onProviderEnabled(String provider) {
+			curLocation = getCurrentLocation();
+
+		}
+
+		public void onProviderDisabled(String provider) {
+			// TODO Auto-generated method stub
+
+		}
+
+		public void onLocationChanged(Location location) {
+			curLocation = getCurrentLocation();
+		}
+	};
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
@@ -114,6 +135,7 @@ public class GreenwayListFragment extends ListFragment {
 				return lhs.get("distance").compareTo(rhs.get("distance"));
 			}
 		});
+		locationManager.removeUpdates(loclis);
 	}
 		
 	/**
@@ -132,40 +154,16 @@ public class GreenwayListFragment extends ListFragment {
 		criteria.setPowerRequirement(Criteria.POWER_LOW);
 
 		String provider = locationManager.getBestProvider(criteria, true);
+		//String gpsProvider = LocationManager.GPS_PROVIDER;
+		//Location location = locationManager.getLastKnownLocation(gpsProvider);
+		
 		Location location = locationManager.getLastKnownLocation(provider);
-		LocationListener loclis = new LocationListener() {
-
-			public void onStatusChanged(String provider, int status, Bundle extras) {
-				// TODO Auto-generated method stub
-
-			}
-
-			public void onProviderEnabled(String provider) {
-				// TODO Auto-generated method stub
-
-			}
-
-			public void onProviderDisabled(String provider) {
-				// TODO Auto-generated method stub
-
-			}
-
-			public void onLocationChanged(Location location) {
-				// TODO Auto-generated method stub
-				updateWithNewLocation(location);
-			}
-		};
-
 		locationManager.requestLocationUpdates(provider, 10000, 10, loclis); 
+		
 		return location;
 	}
 
-	private void updateWithNewLocation(Location location) {
-		// TODO Auto-generated method stub
-		/*double lat = location.getLatitude();
-		double lng = location.getLongitude();*/
-	}
-
+	
 	/**
 	 * Finds distance between two coordinate pairs.
 	 *
