@@ -2,6 +2,8 @@ package com.example.greenways;
 
 import java.util.HashMap;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -18,8 +20,8 @@ public class DescFragment extends Fragment{
 	String provider;
 
 	@Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
 		View view = inflater.inflate(R.layout.description, container, false);
 
 		greenwayHashMap = GreenwayLocation.greenways;
@@ -29,10 +31,9 @@ public class DescFragment extends Fragment{
 		TextView nameGreenWay = (TextView) view.findViewById(R.id.nameGreenWay);
 		nameGreenWay.setText(greenwayHashMap.get(str).getTitle()+ " at " + greenwayHashMap.get(str).getAccesspt());
 
-		TextView nameAccessPoint = (TextView) view.findViewById(R.id.accessPointName);
-		System.out.println(nameAccessPoint);
-		//nameAccessPoint.setText();
-
+		/*TextView nameAccessPoint = (TextView) view.findViewById(R.id.accessPointName);
+		System.out.println("AP : " +nameAccessPoint);
+*/
 		String[] l = greenwayHashMap.get(str).getLocation();
 		final double lattitudeValue = Double.parseDouble(l[1]); //converting string latitude value to double
 		final double longitudeValue=Double.parseDouble(l[0]); //converting string longitude value to double
@@ -40,13 +41,26 @@ public class DescFragment extends Fragment{
 		Button buttonOne = (Button) view.findViewById(R.id.get_direction);
 		buttonOne.setOnClickListener(new Button.OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
-						Uri.parse("http://maps.google.com/maps?daddr="+lattitudeValue+","+longitudeValue+
-								"&saddr="+GreenwayListFragment.curLocation.getLatitude()+","+GreenwayListFragment.curLocation.getLongitude()));
-				intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
-				startActivity(intent);
+
+				AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+				final CharSequence[] items = {"Foo", "Bar", "Baz"};
+
+				builder.setTitle("Make your selection");
+				builder.setItems(items, new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int item) {
+						Intent intent = new Intent(android.content.Intent.ACTION_VIEW, 
+								Uri.parse("http://maps.google.com/maps?daddr="+lattitudeValue+","+longitudeValue+
+										"&saddr="+GreenwayListFragment.curLocation.getLatitude()+","+GreenwayListFragment.curLocation.getLongitude()+"&mode=b"));
+						intent.setClassName("com.google.android.apps.maps", "com.google.android.maps.MapsActivity");
+						startActivity(intent);
+					}
+				});
+				AlertDialog alert = builder.create();
+				alert.show();
 			}
 		});
+		
+
 		return view; 
 	}
 

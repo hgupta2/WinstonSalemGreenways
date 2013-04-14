@@ -2,8 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical" >
 
     <Button
         android:id="@+id/get_direction"
@@ -33,8 +32,6 @@
         android:layout_alignLeft="@+id/nameGreenWay"
         android:layout_below="@+id/nameGreenWay"
         android:layout_marginTop="27dp"
-        
         android:textAppearance="?android:attr/textAppearanceMedium" />
-    
-   
+
 </RelativeLayout>
