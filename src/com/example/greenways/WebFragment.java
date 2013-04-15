@@ -28,11 +28,13 @@ public class WebFragment extends Fragment{
 
 		final Activity activity = getActivity();
 		webview.setWebChromeClient(new WebChromeClient() {
+			@Override
 			public void onProgressChanged(WebView view, int progress) {
 				// Activities and WebViews measure progress with different scales.
 				// The progress meter will automatically disappear when we reach 100%
 				activity.setProgress(progress * 1000);
 			}
+			@Override
 			public void onGeolocationPermissionsShowPrompt(String origin, android.webkit.GeolocationPermissions.Callback callback) {
 				callback.invoke(origin, true, false);
 			}
@@ -40,6 +42,7 @@ public class WebFragment extends Fragment{
 
 		webview.setWebViewClient(new WebViewClient() {
 
+			@Override
 			public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
 				//Users will be notified in case there's an error (i.e. no internet connection)
 				Toast.makeText(activity, "Oh no! " + description, Toast.LENGTH_SHORT).show();

@@ -9,6 +9,11 @@
         android:layout_width="200dp"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:text="Get Directions" />
+        android:textSize="16sp"
+        android:textStyle="bold" 
+        android:text="Get Directions" 
+        android:layout_margin="10dp"
+        android:background="@drawable/custom_button"
+        />
 
 </RelativeLayout>

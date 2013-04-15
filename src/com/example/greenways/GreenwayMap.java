@@ -8,6 +8,7 @@ import java.util.concurrent.ExecutionException;
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -25,7 +26,7 @@ import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapController;
 import com.google.android.maps.MyLocationOverlay;
 
-public class GreenwayMap extends android.support.v4.app.FragmentActivity implements OnInfoWindowClickListener, OnMyLocationChangeListener{
+public class GreenwayMap extends FragmentActivity implements OnInfoWindowClickListener, OnMyLocationChangeListener{
 	private GoogleMap mMap;
 	private UiSettings mapUI;
 	MapController mc;
@@ -41,11 +42,11 @@ public class GreenwayMap extends android.support.v4.app.FragmentActivity impleme
 	String provider;
 	MyLocationOverlay myLocationOverlay;
 
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.greenway_map);
-
 		setUpMapIfNeeded();	
 
 	}
