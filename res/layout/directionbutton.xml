@@ -13,7 +13,7 @@
         android:textStyle="bold" 
         android:text="Get Directions" 
         android:layout_margin="10dp"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/custome_dirbutton"
         />
 
 </RelativeLayout>

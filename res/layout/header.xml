@@ -6,14 +6,15 @@
     android:layout_alignParentBottom="true"
     android:orientation="horizontal" >
 
-     <Button
+    <Button
         android:id="@+id/home"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/home"
-        android:paddingTop="15dip" />
+        android:paddingTop="2dip"
+        android:text="Home" />
 
     <Button
         android:id="@+id/map"
@@ -22,7 +23,8 @@
         android:layout_weight="1"
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/map"
-        android:paddingTop="15dip" />
+        android:paddingTop="2dip"
+        android:text="Map" />
 
     <Button
         android:id="@+id/weather"
@@ -31,7 +33,8 @@
         android:layout_weight="1"
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/weather"
-        android:paddingTop="15dip" />
+        android:paddingTop="2dip"
+        android:text="Weather" />
 
     <Button
         android:id="@+id/citilink"
@@ -40,6 +43,7 @@
         android:layout_weight="1"
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/citylink"
-        android:paddingTop="15dip" />
+        android:paddingTop="2dip"
+        android:text="CityLink" />
 
 </LinearLayout>

@@ -43,7 +43,7 @@ public class WeatherFragment extends Fragment{
 		StrictMode.setThreadPolicy(policy); 
 
 		View view = inflater.inflate(R.layout.webviewdialog, container, false);
-
+		
 		webView = (WebView)view.findViewById(R.id.wb_webview);
 		webView.getSettings().setJavaScriptEnabled(true);
 		String weatherString = QueryYahooWeather();

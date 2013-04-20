@@ -131,22 +131,27 @@ containing a value of this type.
     public static final class drawable {
         public static final int btn_normal=0x7f020000;
         public static final int btn_pressed=0x7f020001;
-        public static final int citylink=0x7f020002;
-        public static final int color_one=0x7f02000f;
-        public static final int color_three=0x7f020011;
-        public static final int color_two=0x7f020010;
-        public static final int custom_button=0x7f020003;
-        public static final int custom_layout=0x7f020004;
-        public static final int green_path=0x7f020005;
-        public static final int home=0x7f020006;
-        public static final int ic_action_search=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int locationmarker=0x7f020009;
-        public static final int map=0x7f02000a;
-        public static final int mylocation=0x7f02000b;
-        public static final int parkingmarker=0x7f02000c;
-        public static final int waytogologo=0x7f02000d;
-        public static final int weather=0x7f02000e;
+        public static final int button_dirnormal=0x7f020002;
+        public static final int button_dirpressed=0x7f020003;
+        public static final int citylink=0x7f020004;
+        public static final int color_one=0x7f020014;
+        public static final int color_three=0x7f020016;
+        public static final int color_two=0x7f020015;
+        public static final int custom_background=0x7f020005;
+        public static final int custom_button=0x7f020006;
+        public static final int custom_layout=0x7f020007;
+        public static final int custome_dirbutton=0x7f020008;
+        public static final int green_path=0x7f020009;
+        public static final int home=0x7f02000a;
+        public static final int ic_action_search=0x7f02000b;
+        public static final int ic_launcher=0x7f02000c;
+        public static final int locationmarker=0x7f02000d;
+        public static final int logo=0x7f02000e;
+        public static final int map=0x7f02000f;
+        public static final int mylocation=0x7f020010;
+        public static final int parkingmarker=0x7f020011;
+        public static final int waytogologo=0x7f020012;
+        public static final int weather=0x7f020013;
     }
     public static final class id {
         public static final int ButtonFragment=0x7f050011;
@@ -162,12 +167,13 @@ containing a value of this type.
         public static final int distance=0x7f05000a;
         public static final int get_direction=0x7f050012;
         public static final int greenwayName=0x7f050008;
+        public static final int head=0x7f05001e;
         public static final int home=0x7f050017;
         public static final int hybrid=0x7f050004;
         public static final int layout_root=0x7f05000e;
         public static final int map=0x7f050013;
         public static final int mapView=0x7f050015;
-        public static final int menu_settings=0x7f05001d;
+        public static final int menu_settings=0x7f05001f;
         public static final int nameAccessPoint=0x7f05000d;
         public static final int nameGreenWay=0x7f05000b;
         public static final int none=0x7f050000;
@@ -176,6 +182,7 @@ containing a value of this type.
         public static final int terrain=0x7f050003;
         public static final int text=0x7f05000f;
         public static final int textView1=0x7f05001a;
+        public static final int title=0x7f05001d;
         public static final int wb_webview=0x7f05001c;
         public static final int weather=0x7f050018;
         public static final int webview=0x7f050005;
@@ -197,6 +204,7 @@ containing a value of this type.
         public static final int networkerror=0x7f03000d;
         public static final int weather=0x7f03000e;
         public static final int webviewdialog=0x7f03000f;
+        public static final int window_title=0x7f030010;
     }
     public static final class menu {
         public static final int activity_main=0x7f080000;
@@ -273,10 +281,11 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f06000d;
         public static final int hello_world=0x7f060012;
         public static final int menu_settings=0x7f060013;
-        public static final int title_activity_greenway=0x7f060014;
     }
     public static final class style {
-        public static final int AppTheme=0x7f070000;
+        public static final int AppTheme=0x7f070002;
+        public static final int CustomTheme=0x7f070001;
+        public static final int CustomWindowTitleBackground=0x7f070000;
     }
     public static final class styleable {
         /** Attributes that can be used with a MapAttrs.

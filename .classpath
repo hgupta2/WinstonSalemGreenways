@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry kind="lib" path="C:/Users/Priyanka Jalisatgi/android-sdks/add-ons/addon-google_apis-google_inc_-10/libs/maps.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Priyanka Jalisatgi/android-sdks/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Priyanka Jalisatgi/Downloads/jarfiles/google-api-client-1.10.3-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Priyanka Jalisatgi/Downloads/jarfiles/google-api-client-android2-1.10.3-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Priyanka Jalisatgi/Downloads/jarfiles/google-api-services-drive-v2-rev1-1.7.2-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Priyanka Jalisatgi/Downloads/jarfiles/google-http-client-1.10.3-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Priyanka Jalisatgi/Downloads/jarfiles/google-http-client-android2-1.10.3-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Priyanka Jalisatgi/Downloads/jarfiles/google-oauth-client-1.10.1-beta.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="C:/Users/komal/AppData/Local/Android/android-sdk/add-ons/addon-google_apis-google-16/libs/maps.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/Users/komal/AppData/Local/Android/android-sdk/add-ons/addon-google_apis-google-16/docs/reference"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/komal/AppData/Local/Android/android-sdk/platforms/android-10/android.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/C:/Users/komal/AppData/Local/Android/android-sdk/docs/reference"/>
+		</attributes>
+		<accessrules>
+			<accessrule kind="nonaccessible" pattern="com/android/internal/**"/>
+		</accessrules>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

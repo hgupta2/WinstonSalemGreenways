@@ -8,27 +8,27 @@
         android:id="@+id/greenwayName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textStyle="bold" 
         android:layout_alignParentLeft="true"
-        android:padding="5dip"/>
-    
+        android:padding="5dip"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/accessPointName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
         android:layout_below="@+id/greenwayName"
-        android:paddingLeft="5dip" />
-         
+        android:paddingLeft="5dip"
+        android:textSize="14sp" />
+
     <TextView
         android:id="@+id/distance"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:textSize="12sp"
-        android:textStyle="bold"
+        android:layout_toRightOf="@+id/greenwayName"
         android:gravity="right"
         android:padding="5dip"
-        android:layout_toRightOf="@+id/greenwayName"/>
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

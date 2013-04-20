@@ -49,7 +49,7 @@ public class WebFragment extends Fragment{
 			}
 		});
 		//This will load the webpage that we want to see
-		webview.loadUrl("http://seeclickfix.com/winston-salem");
+		webview.loadUrl("http://seeclickfix.com/winston-salem/report");
 		
 		return mContentView;
 

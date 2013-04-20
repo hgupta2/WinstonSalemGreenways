@@ -1,35 +1,61 @@
 package com.example.greenways;
 
-import android.graphics.Color;
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Toast;
+import android.view.Window;
+import android.widget.Button;
 
 public class GreenwayList extends FragmentActivity {
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.greenwaylist);
-        
-        View v = findViewById(android.R.id.title);
-        v.setClickable(true);
-        v.setBackgroundColor(Color.parseColor("#FF007300"));
-        v.setMinimumHeight(1500);
-                
-        v.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                Toast.makeText(GreenwayList.this, "Works!", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		
+		super.onCreate(savedInstanceState);
+		//requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
+		setContentView(R.layout.greenwaylist);
+		//getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.window_title);
+		
+		View v = findViewById(android.R.id.title);
+		v.setPadding(5, 0, 0, 0);
+		/*
+		Button map = (Button) findViewById(R.id.head);
+		
+		
+		v.setClickable(true);
+		
+		
+		map.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				final ProgressDialog myPd_ring = ProgressDialog.show(GreenwayList.this, "", "Loading please wait..", true);
+				myPd_ring.setCancelable(true);
+				new Thread(new Runnable() {
+					public void run() {
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.greenwaylist, menu);
-        return true;
-    }
+						Intent intent = new Intent(GreenwayList.this, GreenwayMap.class);
+
+						startActivity(intent);
+						try {
+							Thread.sleep(10000);
+						} catch (Exception e) {
+						}
+						myPd_ring.dismiss();
+					}
+				}).start();
+
+			}
+			
+		});*/
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.greenwaylist, menu);
+		return true;
+	}
 }

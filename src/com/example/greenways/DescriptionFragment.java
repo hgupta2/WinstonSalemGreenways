@@ -23,12 +23,12 @@ public class DescriptionFragment extends Fragment{
 
 		TextView nameGreenWay = (TextView) view.findViewById(R.id.nameGreenWay);
 		nameGreenWay.setText(greenwayHashMap.get(str).getTitle()); 
-		nameGreenWay.setTextColor(Color.argb(90, 00, 150, 00));
+		nameGreenWay.setTextColor(Color.argb(255, 00, 80, 00));
 
 		TextView nameAccessPoint = (TextView) view.findViewById(R.id.nameAccessPoint);
 		nameAccessPoint.setText("\n" + "Access Point at " +greenwayHashMap.get(str).getAccesspt()
 				+ "\n" + "\n" +greenwayHashMap.get(str).getDescription());
-		nameAccessPoint.setTextColor(Color.argb(90, 255, 00, 00));
+		nameAccessPoint.setTextColor(Color.argb(255, 00, 00, 00));
 
 		return view; 
 	}

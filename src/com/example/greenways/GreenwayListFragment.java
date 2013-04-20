@@ -9,21 +9,33 @@ import java.util.concurrent.ExecutionException;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 public class GreenwayListFragment extends ListFragment {
-	
+
 	ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String,String>>();
 	LocationManager locationManager;
 	public static Location curLocation;
+
+	// flag for GPS status
+	public boolean isGPSEnabled = false;
+
+	// flag for network status
+	boolean isNetworkEnabled = false;
+	
+	// flag for GPS status
+	boolean canGetLocation = false;
 	
 	LocationListener loclis = new LocationListener() {
 
@@ -49,25 +61,32 @@ public class GreenwayListFragment extends ListFragment {
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
-		
+
 		SimpleAdapter adapter = new SimpleAdapter(
 				this.getActivity(),
 				list,
 				R.layout.custome_row_view,
 				new String[] {"title","accessPointName","distance"},
 				new int[] {R.id.greenwayName,R.id.accessPointName, R.id.distance}
-				);
-		
+				);/*{
+			@Override
+			public View getView(int position, View convertView, ViewGroup parent) {
+				View v = super.getView(position, convertView,   parent);
+				v.setBackgroundResource(R.drawable.custom_button); //or whatever is your default color
+				//if the position exists in that list the you must set the background to BLUE
+				return v;
+			}
+		};*/
 		
 		populateList();
 		setListAdapter(adapter);
-		
-		
+
+
 	}
-	
+
 	@Override
-	  public void onListItemClick(ListView l, View v, int position, long id) {
-	    // Do something with the data
+	public void onListItemClick(ListView l, View v, int position, long id) {
+		// Do something with the data
 		Intent intent = new Intent(this.getActivity(), Greenway_Description.class);
 
 		@SuppressWarnings("unchecked")
@@ -75,8 +94,8 @@ public class GreenwayListFragment extends ListFragment {
 		intent.putExtra("str", item.get("accessPointName"));
 		System.out.println(item.get("accessPointName"));
 		startActivity(intent);
-	  }
-	
+	}
+
 
 	/**
 	 * Populate the array list using the hashmap greenways.
@@ -101,7 +120,7 @@ public class GreenwayListFragment extends ListFragment {
 		Location curLocation = new Location("dummy");
 		curLocation.setLatitude(36.160642);
 		curLocation.setLongitude(-80.305375);
-		*/
+		 */
 		for(String key : GreenwayLocation.greenways.keySet()) {
 
 			String[] accessLocation = GreenwayLocation.greenways.get(key).getLocation();
@@ -124,7 +143,7 @@ public class GreenwayListFragment extends ListFragment {
 			temp.put("accessPointName", accesspt);
 
 			list.add(temp);
-			
+
 		}
 
 		Collections.sort(list, new Comparator<HashMap<String, String>>() {
@@ -137,15 +156,16 @@ public class GreenwayListFragment extends ListFragment {
 		});
 		locationManager.removeUpdates(loclis);
 	}
-		
+
 	/**
 	 * To fetch the current location of the user
 	 * @return The location object
 	 */
-
+	/*
 	private Location getCurrentLocation() {
 		locationManager = (LocationManager) this.getActivity().getSystemService(Context.LOCATION_SERVICE);
 
+		
 		Criteria criteria = new Criteria();
 		criteria.setAccuracy(Criteria.ACCURACY_FINE);
 		criteria.setAltitudeRequired(false);
@@ -157,13 +177,79 @@ public class GreenwayListFragment extends ListFragment {
 		//String gpsProvider = LocationManager.GPS_PROVIDER;
 		//Location location = locationManager.getLastKnownLocation(gpsProvider);
 		
-		Location location = locationManager.getLastKnownLocation(provider);
-		locationManager.requestLocationUpdates(provider, 10000, 10, loclis); 
+		Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
 		
+		locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 10000, 10, loclis); 
+
 		return location;
 	}
+*/
 
-	
+	/**
+	 * Function to get the user's current location
+	 * @return
+	 */
+	public Location getCurrentLocation() {
+	    Location location = null;
+		try {
+	        locationManager = (LocationManager)this.getActivity().getSystemService(Context.LOCATION_SERVICE);
+
+	        // getting GPS status
+	        isGPSEnabled = locationManager
+	                .isProviderEnabled(LocationManager.GPS_PROVIDER);
+
+	        Log.v("isGPSEnabled", "=" + isGPSEnabled);
+
+	        // getting network status
+	        isNetworkEnabled = locationManager
+	                .isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+	        Log.v("isNetworkEnabled", "=" + isNetworkEnabled);
+
+	        if (isGPSEnabled == false && isNetworkEnabled == false) {
+	            // no network provider is enabled
+	        } else {
+	            this.canGetLocation = true;
+	            if (isNetworkEnabled) {
+	                locationManager.requestLocationUpdates(
+	                        LocationManager.NETWORK_PROVIDER,
+	                        10, 1000*60*1, loclis);
+	                Log.d("Network", "Network");
+	                if (locationManager != null) {
+	                    location = locationManager
+	                            .getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+	                    /*if (location != null) {
+	                        latitude = location.getLatitude();
+	                        longitude = location.getLongitude();
+	                    }*/
+	                }
+	            }
+	            // if GPS Enabled get lat/long using GPS Services
+	            if (isGPSEnabled) {
+	                if (location == null) {
+	                    locationManager.requestLocationUpdates(
+	                            LocationManager.GPS_PROVIDER,
+	                            10, 1000*60*1, loclis);
+	                    Log.d("GPS Enabled", "GPS Enabled");
+	                    if (locationManager != null) {
+	                        location = locationManager
+	                                .getLastKnownLocation(LocationManager.GPS_PROVIDER);
+	                        /*if (location != null) {
+	                            latitude = location.getLatitude();
+	                            longitude = location.getLongitude();
+	                        }*/
+	                    }
+	                }
+	            }
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+
+	    return location;
+	}
+
 	/**
 	 * Finds distance between two coordinate pairs.
 	 *
