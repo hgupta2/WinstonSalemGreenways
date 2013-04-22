@@ -265,7 +265,7 @@
   <Placemark>
   	<Greenway>Salem Lake trail</Greenway>
     <name>Linville 2</name>
-    <description>- 7 miles unpaved around Salem Lake. Bikes allowed. (Trail users please sign in at Fishing Station)</description>
+    <description>7 miles unpaved around Salem Lake. Bikes allowed. (Trail users please sign in at Fishing Station)</description>
     <styleUrl>#style18</styleUrl>
     <Point>
       <coordinates>-80.158936,36.106754,0.000000</coordinates>
@@ -274,7 +274,7 @@
   <Placemark>
 	<Greenway>Salem Lake trail</Greenway>
     <name>Linville 1</name>
-    <description>- 7 miles unpaved around Salem Lake. Bikes allowed. (Trail users please sign in at Fishing Station)</description>
+    <description>7 miles unpaved around Salem Lake. Bikes allowed. (Trail users please sign in at Fishing Station)</description>
     <styleUrl>#style37</styleUrl>
     <Point>
       <coordinates>-80.159225,36.105133,0.000000</coordinates>
@@ -283,7 +283,7 @@
   <Placemark>
   	<Greenway>Salem Lake trail</Greenway>
     <name>New GSO Road</name>
-    <description>- 7 miles unpaved around Salem Lake. Bikes allowed. (Trail users please sign in at Fishing Station)</description>
+    <description>7 miles unpaved around Salem Lake. Bikes allowed. (Trail users please sign in at Fishing Station)</description>
     <styleUrl>#style11</styleUrl>
     <Point>
       <coordinates>-80.185188,36.101067,0.000000</coordinates>
@@ -292,7 +292,7 @@
   <Placemark>
   	<Greenway>Salem Lake trail</Greenway>
     <name>Salem Lake Road</name>
-    <description>- 7 miles unpaved around Salem Lake. Bikes allowed. (Trail users please sign in at Fishing Station)</description>
+    <description>7 miles unpaved around Salem Lake. Bikes allowed. (Trail users please sign in at Fishing Station)</description>
     <styleUrl>#style15</styleUrl>
     <Point>
       <coordinates>-80.193413,36.092625,0.000000</coordinates>
@@ -301,7 +301,7 @@
   <Placemark>
   	<Greenway>Salem Lake trail</Greenway>
     <name>Reynolds Park Road</name>
-    <description>- 7 miles unpaved around Salem Lake. Bikes allowed. (Trail users please sign in at Fishing Station)</description>
+    <description>7 miles unpaved around Salem Lake. Bikes allowed. (Trail users please sign in at Fishing Station)</description>
     <styleUrl>#style34</styleUrl>
     <Point>
       <coordinates>-80.210556,36.088749,0.000000</coordinates>
@@ -364,7 +364,7 @@
   <Placemark>
   	<Greenway>Strollway</Greenway>
     <name>Strollway South</name>
-    <description>- 1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
+    <description>1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
     <styleUrl>#style19</styleUrl>
     <Point>
       <coordinates>-80.241798,36.082352,0.000000</coordinates>
@@ -373,7 +373,7 @@
   <Placemark>
   	<Greenway>Strollway</Greenway>
     <name>SE Gateway</name>
-    <description>- 1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
+    <description>1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
     <styleUrl>#style28</styleUrl>
     <Point>
       <coordinates>-80.241608,36.080479,0.000000</coordinates>
@@ -418,7 +418,7 @@
   <Placemark>
   	<Greenway>Strollway</Greenway>
     <name>Academy St</name>
-    <description>- 1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
+    <description>1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
     <styleUrl>#style33</styleUrl>
     <Point>
       <coordinates>-80.243904,36.087379,0.000000</coordinates>
@@ -427,7 +427,7 @@
   <Placemark>
   	<Greenway>Strollway</Greenway>
     <name>Brookstown Ave</name>
-    <description>- 1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
+    <description>1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
     <styleUrl>#style6</styleUrl>
     <Point>
       <coordinates>-80.244675,36.090897,0.000000</coordinates>
@@ -436,7 +436,7 @@
   <Placemark>
   	<Greenway>Strollway</Greenway>
     <name>First St</name>
-    <description>- 1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
+    <description>1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
     <styleUrl>#style31</styleUrl>
     <Point>
       <coordinates>-80.245689,36.094559,0.000000</coordinates>
@@ -445,7 +445,7 @@
   <Placemark>
   	<Greenway>Strollway</Greenway>
     <name>Second St</name>
-    <description>- 1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
+    <description>1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
     <styleUrl>#style25</styleUrl>
     <Point>
       <coordinates>-80.245880,36.096046,0.000000</coordinates>
@@ -454,7 +454,7 @@
   <Placemark>
   	<Greenway>Strollway</Greenway>
     <name>Third St</name>
-    <description>- 1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
+    <description>1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
     <styleUrl>#style32</styleUrl>
     <Point>
       <coordinates>-80.246178,36.097591,0.000000</coordinates>
@@ -463,7 +463,7 @@
   <Placemark>
   	<Greenway>Strollway</Greenway>
     <name>Fourth St</name>
-    <description>- 1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
+    <description>1.2 miles paved and gravel connector between downtown and Old Salem, from 4th Street to Salem Av</description>
     <styleUrl>#style17</styleUrl>
     <Point>
       <coordinates>-80.246262,36.098286,0.000000</coordinates>
@@ -479,7 +479,7 @@
     </Point>
   </Placemark>
   <Placemark>
-  	<Greenway>Brushy Fork Creek Trail and Virginia</Greenway>
+  	<Greenway>Brushy Fork Creek Trail</Greenway>
     <name>Old GSO Rd</name>
     <description>.4 mile path along Brushy Fork Creek connecting south to Newell/Massey Greenway. Begins at Skyland Park at Old Greensboro Road, and ends at Lowery Street. Will connect in the future to Salem Creek Greenway.</description>
     <styleUrl>#style36</styleUrl>
@@ -488,7 +488,7 @@
     </Point>
   </Placemark>
   <Placemark>
-  	<Greenway>Virginia K. Newell/Ann Massey Trail</Greenway>
+  	<Greenway>Virginia K. Newell Trail</Greenway>
     <name>Waterworks Rd</name>
     <description>1.2 miles paved along Brushy Fork from Waterworks Road to Old Greensboro Road. Bikes and skates allowed.</description>
     <styleUrl>#style5</styleUrl>
@@ -544,7 +544,7 @@
   <Placemark>
   	<Greenway>Jefferson School Connector</Greenway>
     <name>Jefferson Elem</name>
-    <description>- 1.6 miles, paved along Muddy Creek between County Club and Jefferson Elementary School. Entrance off of Meadowlark Road. Bikes and skates allowed</description>
+    <description>1.6 miles, paved along Muddy Creek between County Club and Jefferson Elementary School. Entrance off of Meadowlark Road. Bikes and skates allowed</description>
     <styleUrl>#style16</styleUrl>
     <Point>
       <coordinates>-80.348511,36.123940,0.000000</coordinates>
@@ -553,7 +553,7 @@
   <Placemark>
   	<Greenway>Muddy Creek Trail</Greenway>
     <name>Robinhood Rd Muddy Creek</name>
-    <description>- 1.6 miles, paved along Muddy Creek between County Club and Jefferson Elementary School. Entrance off of Meadowlark Road. Bikes and skates allowed</description>
+    <description>1.6 miles, paved along Muddy Creek between County Club and Jefferson Elementary School. Entrance off of Meadowlark Road. Bikes and skates allowed</description>
     <styleUrl>#style26</styleUrl>
     <Point>
       <coordinates>-80.350227,36.118740,0.000000</coordinates>
@@ -562,7 +562,7 @@
   <Placemark>
   	<Greenway>Muddy Creek Trail</Greenway>
     <name>Meadowlark</name>
-    <description>- 1.6 miles, paved along Muddy Creek between County Club and Jefferson Elementary School. Entrance off of Meadowlark Road. Bikes and skates allowed</description>
+    <description>1.6 miles, paved along Muddy Creek between County Club and Jefferson Elementary School. Entrance off of Meadowlark Road. Bikes and skates allowed</description>
     <styleUrl>#style3</styleUrl>
     <Point>
       <coordinates>-80.363274,36.096966,0.000000</coordinates>
