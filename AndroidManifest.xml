@@ -29,7 +29,8 @@
         android:theme="@style/CustomTheme" >
         <activity android:name=".FrontLine" 
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.NoTitleBar" >
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:noHistory="true" >
 
             <!-- android:label="@string/title_activity_greenway" -->
             <intent-filter>

@@ -17,7 +17,8 @@ public class Header extends Fragment {
 	Button mapButton;
 	Button weatherButton;
 	Button citilink;
-
+	ProgressDialog myPd_ring = null;
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
@@ -35,23 +36,24 @@ public class Header extends Fragment {
 
 			public void onClick(View v) {
 
-				final ProgressDialog myPd_ring = ProgressDialog.show(activity,
-						"", "Loading please wait..", true);
+				myPd_ring = ProgressDialog.show(activity, "", "Loading please wait..", true);
 				myPd_ring.setCancelable(true);
 				new Thread(new Runnable() {
 					public void run() {
 
 						Intent intent = new Intent(activity, GreenwayList.class);
-
+						//intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 						activity.startActivity(intent);
+						//activity.finish();
 						try {
 							Thread.sleep(7000);
 						} catch (Exception e) {
 						}
 						myPd_ring.dismiss();
 					}
+					
 				}).start();
-
+				
 			}
 
 		});
@@ -60,7 +62,7 @@ public class Header extends Fragment {
 
 			public void onClick(View v) {
 
-				final ProgressDialog myPd_ring = ProgressDialog.show(activity,
+				myPd_ring = ProgressDialog.show(activity,
 						"", "Loading please wait..", true);
 				myPd_ring.setCancelable(true);
 				new Thread(new Runnable() {
@@ -74,6 +76,7 @@ public class Header extends Fragment {
 						} catch (Exception e) {
 						}
 						myPd_ring.dismiss();
+						//Header.this.handler.sendEmptyMessage(0);
 					}
 				}).start();
 
@@ -85,7 +88,7 @@ public class Header extends Fragment {
 
 			public void onClick(View v) {
 
-				final ProgressDialog myPd_ring = ProgressDialog.show(activity,
+				myPd_ring = ProgressDialog.show(activity,
 						"", "Loading please wait..", true);
 				myPd_ring.setCancelable(true);
 				new Thread(new Runnable() {
@@ -98,6 +101,7 @@ public class Header extends Fragment {
 						} catch (Exception e) {
 						}
 						myPd_ring.dismiss();
+						//Header.this.handler.sendEmptyMessage(0);
 					}
 				}).start();
 
@@ -109,7 +113,7 @@ public class Header extends Fragment {
 
 			public void onClick(View v) {
 
-				final ProgressDialog myPd_ring = ProgressDialog.show(activity,
+				myPd_ring = ProgressDialog.show(activity,
 						"", "Loading please wait..", true);
 				myPd_ring.setCancelable(true);
 				new Thread(new Runnable() {
@@ -122,6 +126,7 @@ public class Header extends Fragment {
 						} catch (Exception e) {
 						}
 						myPd_ring.dismiss();
+						//Header.this.handler.sendEmptyMessage(0);
 					}
 				}).start();
 
