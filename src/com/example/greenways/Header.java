@@ -69,7 +69,7 @@ public class Header extends Fragment {
 					public void run() {
 
 						Intent intent = new Intent(activity, GreenwayMap.class);
-
+						
 						activity.startActivity(intent);
 						try {
 							Thread.sleep(10000);

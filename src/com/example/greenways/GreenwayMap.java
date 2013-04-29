@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.Gravity;
+import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -47,6 +49,9 @@ public class GreenwayMap extends FragmentActivity implements OnInfoWindowClickLi
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.greenway_map);
+        TextView v = (TextView) findViewById(android.R.id.title);
+        v.setGravity(Gravity.CENTER);
+        v.setTextSize(17);
 		setUpMapIfNeeded();	
 
 	}

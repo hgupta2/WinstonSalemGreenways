@@ -1,9 +1,12 @@
 package com.example.greenways;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.View;
+import android.widget.TextView;
 
 public class GreenwayList extends FragmentActivity {
 
@@ -15,41 +18,41 @@ public class GreenwayList extends FragmentActivity {
 		setContentView(R.layout.greenwaylist);
 		//getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.window_title);
 		
-		View v = findViewById(android.R.id.title);
-		v.setPadding(5, 0, 0, 0);
-		/*
-		Button map = (Button) findViewById(R.id.head);
-		
-		
-		v.setClickable(true);
-		
-		
-		map.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				final ProgressDialog myPd_ring = ProgressDialog.show(GreenwayList.this, "", "Loading please wait..", true);
-				myPd_ring.setCancelable(true);
-				new Thread(new Runnable() {
-					public void run() {
-
-						Intent intent = new Intent(GreenwayList.this, GreenwayMap.class);
-
-						startActivity(intent);
-						try {
-							Thread.sleep(10000);
-						} catch (Exception e) {
-						}
-						myPd_ring.dismiss();
-					}
-				}).start();
-
-			}
-			
-		});*/
-	}
+        TextView v = (TextView) findViewById(android.R.id.title);
+        v.setGravity(Gravity.CENTER);
+        v.setTextSize(17);
+    }
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.greenwaylist, menu);
 		return true;
 	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event)  {
+	    if (android.os.Build.VERSION.SDK_INT < 5
+	            && keyCode == KeyEvent.KEYCODE_BACK
+	            && event.getRepeatCount() == 0) {
+	        // Take care of calling this method on earlier versions of
+	        // the platform where it doesn't exist.
+	        onBackPressed();
+	        return true;
+	    }
+
+	    return super.onKeyDown(keyCode, event);
+	}
+
+	@Override
+	public void onBackPressed() {
+	    // This will be called either automatically for you on 2.0
+	    // or later, or by the code above on earlier versions of the
+	    // platform.
+		moveTaskToBack(true);
+		//finish();
+		Intent intent = new Intent(this,FrontLine.class);
+		startActivity(intent);
+	    return;
+	}
+
 }

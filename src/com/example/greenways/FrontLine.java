@@ -1,5 +1,6 @@
 package com.example.greenways;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -12,6 +13,7 @@ import android.os.CountDownTimer;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Window;
+import android.widget.Toast;
 
 public class FrontLine extends Activity {
 	
@@ -68,9 +70,12 @@ public class FrontLine extends Activity {
 			}
 		})
 		.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			@SuppressLint("ShowToast")
 			public void onClick(DialogInterface dialog, int id) {
-				Intent intent=new Intent(FrontLine.this, GreenwayList.class);
-				startActivity(intent);
+				Toast toast = Toast.makeText(getApplicationContext(), "Need Data connection", Toast.LENGTH_LONG);
+				toast.show();
+				finish();
+				
 			}
 		});
 		AlertDialog dialog = builder.create();

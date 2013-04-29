@@ -14,7 +14,8 @@
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/home"
         android:paddingTop="2dip"
-        android:text="Home" />
+        android:text="Home"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/map"
@@ -24,7 +25,8 @@
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/map"
         android:paddingTop="2dip"
-        android:text="Map" />
+        android:text="Map" 
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/weather"
@@ -34,7 +36,8 @@
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/weather"
         android:paddingTop="2dip"
-        android:text="Weather" />
+        android:text="Weather"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/citilink"
@@ -44,6 +47,7 @@
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/citylink"
         android:paddingTop="2dip"
-        android:text="CityLink" />
+        android:text="CityLink"
+        android:textStyle="bold" />
 
 </LinearLayout>

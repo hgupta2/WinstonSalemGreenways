@@ -2,8 +2,9 @@ package com.example.greenways;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.Gravity;
 import android.view.Menu;
-import android.view.View;
+import android.widget.TextView;
 
 public class CityLink extends FragmentActivity {
 
@@ -11,8 +12,10 @@ public class CityLink extends FragmentActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.citylinkwebview);
-        View v = findViewById(android.R.id.title);
-		v.setPadding(5, 0, 0, 0);
+        TextView v = (TextView) findViewById(android.R.id.title);
+        v.setGravity(Gravity.CENTER);
+        v.setTextSize(17);
+        
     }
 
     @Override
