@@ -13,7 +13,7 @@
         android:layout_weight="1"
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/home"
-        android:padding="5dip" />
+        android:gravity="center_horizontal" />
 
     <Button
         android:id="@+id/map"
@@ -22,7 +22,7 @@
         android:layout_weight="1"
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/transparent_map"
-        android:padding="5dip" />
+        android:gravity="center_horizontal" />
 
     <Button
         android:id="@+id/weather"
@@ -31,7 +31,7 @@
         android:layout_weight="1"
         android:background="@drawable/custom_button"
         android:drawableTop="@drawable/transparent_weather"
-        android:padding="5dip" />
+        android:gravity="center_horizontal" />
 
     <Button
         android:id="@+id/citilink"
@@ -39,7 +39,7 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/custom_button"
-        android:drawableTop="@drawable/citylink"
-        android:padding="5dip" />
+        android:drawableTop="@drawable/seeclickfix"
+        android:gravity="center_horizontal" />
 
 </LinearLayout>

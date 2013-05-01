@@ -23,6 +23,6 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
         android:layout_weight="4"
-        android:background="@drawable/map" />
+        android:background="@drawable/transparent_map" />
 
 </LinearLayout>
